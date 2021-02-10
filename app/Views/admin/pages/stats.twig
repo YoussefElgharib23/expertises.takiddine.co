@@ -1,0 +1,264 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+        
+      
+         
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1>  <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.statistique.1}}</span></h1>
+</div>
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i>{{l.bread.1}}</a></li>
+    <li class="active" title="{{l.users.1}}" >{{l.statistique.1}}</li>
+</ul>
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+
+
+
+
+
+<!-- Simple statistics -->
+   {% if a is empty %}
+   <h1 id="la_date" class="statistique_head">{{l.statistique.20}} : </h1>
+   {% endif %}
+
+
+   
+   <h1>{% if du is not empty %} {{l.statistique.2}} <b>{{du|dateOnly}}</b>  {% endif %}
+
+   {% if a is not empty %}
+   -  a : <b>{{a|dateOnly}} </b>
+   {% endif %}
+   </h1>
+   
+
+
+
+<div class="panel statspanel">
+<div class="panel-body">
+<form class="heading-form " id="form-stats-From-To" autocomplete="off" method="get" action="{{path_for('stats')}}">
+<div class="section-wrapper mg-t-20">
+       
+          <div class="row">
+            <div class="col-lg-5">
+                <input value="" type="text" name="from" readonly="true" placeholder="{{l.statistique.3}}" class="form-control" id="datepickerFrom">
+            </div><!-- col -->
+            <div class="col-lg-5 mg-t-40 mg-lg-t-0">
+                <input type="text" name="to" value="" readonly="true" placeholder="{{l.statistique.4}}" class="form-control" id="datepickerTo">
+            </div><!-- col -->
+            <div class="col-lg-2 mg-t-40 mg-lg-t-0">
+                <input type="submit" class="btn  btn-block btn-success" value="{{l.statistique.5}}">
+            </div>
+          </div>
+        </div>
+</form>
+</div>        
+</div>
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body panel-body-accent">
+                <div class="media no-margin">
+                  <div class="media-left media-middle">
+                    <i class=" icon-car icon-3x text-success-400"></i>
+                  </div>
+
+                  <div class="media-body text-right">
+                    <h3 class="no-margin text-semibold">{{all.sinistre}}</h3>
+                    <span class="text-uppercase text-size-mini text-muted">{{l.statistique.6}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body">
+                <div class="media no-margin">
+                  <div class="media-left media-middle">
+                    <i class=" icon-car icon-3x text-indigo-400"></i>
+                  </div>
+
+                  <div class="media-body text-right">
+                    <h3 class="no-margin text-semibold">{{all.sinistre_complete}}</h3>
+                    <span class="text-uppercase text-size-mini text-muted">T{{l.statistique.7}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h3 class="no-margin text-semibold">{{all.sinistre_payant}}</h3>
+                    <span class="text-uppercase text-size-mini text-muted">{{l.statistique.8}}</span>
+                  </div>
+
+                  <div class="media-right media-middle">
+                    <i class="icon-cash4 icon-3x text-blue-400"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h3 class="no-margin text-semibold">{{all.sinistre_non_payant}}</h3>
+                    <span class="text-uppercase text-size-mini text-muted">{{l.statistique.9}}</span>
+                  </div>
+
+                  <div class="media-right media-middle">
+                    <i class="icon-cash4 icon-3x text-danger-400"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body bg-blue-400 has-bg-image">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h3 class="no-margin">{{all.membres}}</h3>
+                    <span class="text-uppercase text-size-mini">{{l.statistique.10}}</span>
+                  </div>
+
+                  <div class="media-right media-middle">
+                    <i class=" icon-users icon-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body bg-danger-400 has-bg-image">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h3 class="no-margin"><b>{{all.colaborators}}</b></h3>
+                    <span class="text-uppercase text-size-mini">{{l.statistique.11}}</span>
+                  </div>
+                  <div class="media-right media-middle">
+                    <i class="icon-users4 icon-3x"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body bg-success-400 has-bg-image">
+                <div class="media no-margin">
+                  <div class="media-left media-middle">
+                    <i class="icon-woman icon-3x"></i>
+                  </div>
+
+                  <div class="media-body text-right">
+                    <h3 class="no-margin"><b>{{all.assistantes}}</b></h3>
+                    <span class="text-uppercase text-size-mini">{{l.statistique.12}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3">
+              <div class="panel panel-body bg-indigo-400 has-bg-image">
+                <div class="media no-margin">
+                  <div class="media-left media-middle">
+                     <i class="icon-bubbles3 icon-3x"></i>
+                  </div>
+
+                  <div class="media-body text-right">
+                    <h3 class="no-margin"><b>{{all.mission}}</b></h3>
+                    <span class="text-uppercase text-size-mini">{{l.statistique.13}}</span>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /simple statistics -->
+<div class="row">
+
+
+<div class="">
+  <h1 class="col-md-12">{{l.statistique.14}}</h1>
+{% for key,item in compagnies %}
+<div class="col-sm-6 col-md-3">
+              <div class="panel panel-body bg-indigo-400 has-bg-image">
+                <div class="media no-margin">
+                
+                  <div class="media-body text-right">
+                    <h3 class="no-margin"><b>{{item}}</b></h3>
+                    <span class="text-uppercase text-size-mini">{{key}}</span>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endfor %}
+</div>
+
+<h1 class="col-md-12">{{l.statistique.15}}</h1>
+
+  {% for man in colaborators %}
+         <div class="col-md-4">
+            <div class="panel mg-b-25 pd-20">                 
+                <div class="panel-body">
+                                  <h6 class="slim-panel-title text-left"><b>{{man.name}}</b></h6>
+
+                    <table class="table border-dashed no-border mg-t-25">
+                            <tbody><tr>
+                                <td>{{l.statistique.16}}</td>
+                                <td>{{man.Total_Sinistre_Payent}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{l.statistique.17}}</td>
+                                <td>{{man.Total_Mission}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{l.statistique.18}}</td>
+                                <td>{{man.Total_Mission_en_attente}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{l.statistique.19}}</td>
+                                <td>{{man.Total_Mission_Completes}}</td>
+                            </tr>
+                           
+                        </tbody></table>
+                </div>
+                
+            </div>
+        </div> 
+        {% endfor %}
+         </table>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
+
+{% endblock %}	
+            

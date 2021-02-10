@@ -1,0 +1,153 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.userscreate.1}} {% endblock %}
+{% block content %}
+
+<!-- Main content -->
+<div class="content-wrapper">
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i> {{l.sinistre_edit.1}}</span></h1>
+</div>
+
+<div class="heading-elements">
+
+
+
+</div>
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="الرئيسية"><i class="icon-home2 position-left"></i>{{l.bread.1}}</a></li>
+    <li class="active" ><a title="{{l.sidebar.3}}" href="{{path_for('sinistres')}}">Les Sinistres</a></li>
+    <li class="active" title="{{l.userscreate.1}}"> {{l.sinistre_edit.1}}</li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+
+   
+   
+    <!-- Content area -->
+    <div class="content">
+        {% include "admin/elements/flash.twig" %}
+        
+
+
+
+
+<div class="col-md-12">
+  
+  <form action="{{path_for('sinistres.update',{id : sinistre.id})}}" method="POST">
+
+  <input type="hidden" name="assistant_id" value='{{user.id}}' required>
+
+
+
+
+
+  <div class="form-group">
+    <label for="assure">{{l.sinistre_create.2}}</label>
+    <input type="text" class="form-control datepicker" autocomplete="new-password" data-date-format="dd/mm/yyyy" id="dat-sinistre" name='date_sinistre' value="{{sinistre.date_sinistre}}" placeholder="{{l.sinistre_create.2}}" required>
+  </div> 
+
+  <div class="form-group">
+    <label for="assure">{{l.sinistre_create.3}}</label>
+    <input type="text" class="form-control"  value="{{sinistre.garage}}"  name='garage' placeholder="{{l.sinistre_create.3}}" >
+  </div> 
+
+  <div class="form-group">
+    <label for="assure">{{l.sinistre_create.4}}</label>
+    <input type="text" class="form-control" name='folder_id' value="{{sinistre.folder_id}}" placeholder="{{l.sinistre_create.4}}" required>
+  </div> 
+
+
+  <div class="form-group">
+    <label for="assure">{{l.sinistre_edit.6}}</label>
+    <input type="text" class="form-control" id="assure" name='assure' value="{{sinistre.assure}}" placeholder="Assure" required>
+  </div>
+  <div class="form-group">
+    <label for="Vehicule">{{l.sinistre_edit.7}}</label>
+    <input type="text" class="form-control" value="{{sinistre.vehicule}}" id="Vehicule"  name='vehicule' placeholder="entrer Vehicule" required>
+  </div>
+  <div class="form-group ww">
+    <label for="immatriculation">{{l.sinistre_edit.8}}</label>
+    <input type="text" class="form-control" id="immatriculation"  name='matricule_ww' value="{{sinistre.matricule_ww}}" placeholder="entrer Imatruculation" required>
+  </div>
+    <div class="form-group">
+    <label for="immatriculation">{{l.sinistre_edit.9}} </label>
+    <input type="text" class="form-control" id="matricule_dorigine"  name='matricule' value="{{sinistre.matricule}}" placeholder="entrer Immatruculation" required>
+  </div>
+      <div class="form-group">
+    <label for="tele">{{l.sinistre_edit.10}}</label>
+    <input type="number" class="form-control" id="tele"  name="telephone" value="{{sinistre.telephone}}" placeholder="entrer Numéro de Telephone" required>
+  </div>
+    <div class="form-group">
+    <label for="company">{{l.sinistre_edit.11}}</label>
+       <select class="form-control select_compagnie" name="company" data-value="{{sinistre.company}}">
+          <option value="Axa assurance maroc">Axa assurance maroc</option>
+          <option value="Allianz">Allianz</option>
+          <option value="Saham assurance">Saham assurance</option>
+          <option value="Sanad">Sanad</option>
+          <option value="Mamda">Mamda</option>
+          <option value="Mcma">Mcma</option>
+          <option value="Matu">Matu</option>
+          <option value="Cat">Cat</option>
+          <option value="Atlanta">Atlanta</option>
+          <option value="wafa assurence">wafa assurence</option>
+          <option value="autre">Autre</option>
+       </select>
+  </div>
+      <div class="form-group" style="display:none;" id="autre_compagnie">
+    <label for="tele">{{l.sinistre_edit.12}}</label>
+    <input type="text" class="form-control" id="nouveau_compagnie"  name="nouveau_compagnie" placeholder="entrer Nom nouveau_compagnie" required>
+  </div>
+    <div class="form-group">
+    <label for="collaborateur">{{l.sinistre_edit.13}}</label>
+       <select class="form-control" name="colaborator_id"  data-value="{{sinistre.colaborator_id}}">
+        {% for item in colaborators %}
+          <option value="{{item.id}}">{{item.username}}</option>
+        {% endfor %}
+      </select>
+  </div>
+    
+    
+    
+    
+    
+    
+
+ 
+  <button type="submit" class="btn btn-block btn-success btn-lg">{{l.sinistre_edit.14}}</button>
+</form>
+  
+  
+  
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            
+{% endblock %}  

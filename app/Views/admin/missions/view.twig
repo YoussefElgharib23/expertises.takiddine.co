@@ -1,0 +1,133 @@
+{% extends "admin/layout.twig" %}
+
+{% block content %}
+   
+        
+      
+         
+<!-- Main content -->
+<div class="content-wrapper">
+
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.missionview.1}} {{mission.etape}} de sinistre N°{{mission.sinitre_id}}</span></h1>
+</div>
+
+<div class="heading-elements">
+<a href="{{ path_for('mission.download',{id : mission.id}) }}" class="btn bg-blue btn-labeled heading-btn"><b><i class="icon-download"></i></b> {{l.missionview.2}}</a>
+
+{% if mission.zip == '1' %}
+<a href="{{ path_for('mission.deleteZip',{id : mission.id}) }}" class="btn bg-danger btn-labeled heading-btn"><b><i class="icon-cross"></i></b> {{l.missionview.3}}</a>
+{% endif %}
+
+
+
+{% if mission.gallery is not empty %}
+<a href="javascript:;"  id='renvoyer-mission' data-id="{{mission.id}}" data-type='{{mission.etape}}}' class="btn bg-warning  heading-btn"> {{l.missionview.4}}</a>
+{% endif %}
+
+
+
+
+</div>
+
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i></a></li>
+    <li class="active" title="{{l.users.1}}" >{{l.missionview.5}} {{mission.etape}}</li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+
+
+
+<!-- Modal envoyer mission -->
+<div class="modal fade" id="Resendmission"  tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+
+        <form action="{{path_for('missions.resend')}}" method='post'>
+
+      <div class="alert alert-danger" style="display:none;">{{l.missionview.6}}</div>
+
+           <div class="form-group">
+          <label for="">{{l.missionview.6}}</label>
+        <select name="colaborator_id" id="" class="form-control" required>
+          <option></option>
+          {% for item in colaborators %}
+            <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Renvoyer Mission" class="btn btn-block btn-success">
+        </div>
+            <input type="hidden" name="mission_id" id="mission_id" />
+        </form>
+      </div>
+      <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">{{l.missionview.7}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Content area -->
+<div class="content">
+    
+{% include "admin/elements/flash.twig" %}
+
+
+
+   <div class="col-md-12 ">
+   <div class="panel">
+   <div class="panel-body">
+   <div class="col-md-12" id="lightgallery">
+
+
+  {% for item in mission.imgs() %}
+   <a class="box-voiture col-md-3"  href="{{url.sinistres}}/{{mission.imgs_url()}}{{item}}">
+      <img src="{{url.sinistres}}/{{mission.imgs_url()}}{{item}}" />
+   </a>
+  {% endfor %}
+       
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+
+
+
+    </div>
+</div>
+   
+
+{% endblock %}  
+            

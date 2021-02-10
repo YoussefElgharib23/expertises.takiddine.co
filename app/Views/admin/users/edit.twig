@@ -1,0 +1,192 @@
+{% extends "admin/layout.twig" %}
+
+{% block title %}  {{l.usersedit.2}} | {{ user.username}}  {% endblock %}
+
+
+{% block content %}
+    
+
+
+<!-- Main content -->
+<div class="content-wrapper">
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>
+{{l.users_edit.1}}</span></h1>
+</div>
+
+<div class="heading-elements">
+
+
+
+</div>
+</div>
+<div class="breadcrumb-line">
+<ul class="breadcrumb">
+    
+    <li class="active" ><a title="الأعضاء" href="{{path_for('users')}}">{{l.users_edit.2}}</a></li>
+    <li class="active" title="{{l.users_edit.2}}">{{l.users_edit.15}}</li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+<!-- Content area -->
+<div class="content">
+
+
+{% include "admin/elements/flash.twig" %}
+
+
+<!-- تعديل البيانات الشخصية للمستخدم -->
+<div class="col-md-9">								
+<form  enctype="multipart/form-data" id="user_form" method='post' action="{{ path_for('users.update', {'id': content.id}) }}">
+
+
+<!-- المعلومات الشخصية -->			
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h5 class="panel-title">{{l.users_edit.3}}</h5>
+        <p>{{l.users_edit.4}}</p>
+    </div>
+    
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{l.users_edit.5}}</label>
+                                <input type="text" class="form-control frequired" value="{{content.username}}" name="username" required>
+                            </div>
+                        </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{l.users_edit.6}}</label>
+                                <input type="text" class="form-control frequired" value="{{content.email}}" name="email" ="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{l.users_edit.7}}</label>
+                                <input type="text" ="{{l.users_edit.7}}" value="{{content.cin}}" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{l.users_edit.8}}</label>
+                                <input type="text" class="form-control" value='{{content.phone}}' name="phone"  >
+                            </div>
+                        </div>
+                    </div>
+                   
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{l.users_edit.9}}</label>
+                                <input type="text" value='{{content.ville}}'  class="form-control frequired" name="ville"   > 
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label class="control-label">{{l.users_edit.10}}</label>
+                        
+                       
+                        <input value='{{content.banck}}'  type="text"  class="form-control frequired" name="banck"   > 
+                       
+                        </div>
+                        </div>
+                    </div>
+
+                    
+            
+
+            
+
+            <div class="form-group">
+                <label class="control-label">{{l.users_edit.11}}</label>
+
+                
+                <input value='{{content.rib}}' type="text"  class="form-control frequired" name="rib"   required> 
+               
+                
+            </div>
+
+                    
+                
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// المعلومات الشخصية -->						
+					
+					
+<!-- كلمة المرور -->										
+<div class="panel panel-flat">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{l.users_edit.12}}</h3>
+        <p>{{l.users_edit.13}}</p>
+    </div>
+    <div class="panel-body">
+        <fieldset class="content-group">
+            <div class="col-md-9">
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password"  >
+                </div>
+            </div>
+          
+        </fieldset>
+    </div>
+</div>
+<!--// كلمة المرور -->
+
+
+<!-- تحديث البيانات -->
+<div class="text-right">
+<button type="submit" class="btn btn-block btn-primary">{{l.users_edit.14}}<i class="icon-arrow-right13 position-right"></i></button>
+</div>
+<!--// تحديث البيانات -->  
+<br>
+<div id="result"></div> 
+                              
+                                        
+
+</form> 
+
+
+              
+</div>					
+<!--// تعديل البيانات الشخصية للمستخدم -->
+
+
+
+<div class="col-md-3">
+
+ 
+
+
+</div>
+
+</div>
+<!-- /content area -->
+
+<!-- set the select -->		
+<script> $('.country').select2({ placeholder: 'الدولة',}); </script>
+				
+<!-- change the value of selected Country to user's country -->
+<script> $(document).ready(function() { $(".country").select2().val("{{user.country}}").trigger("change") }); </script>		
+
+<!-- set the select -->		
+<script> $('.role').select2({ placeholder: 'تعيين المستخدم',}); </script>
+
+{% endblock %}

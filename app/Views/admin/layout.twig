@@ -1,0 +1,74 @@
+ {% spaceless %}
+<html lang="fr" >
+<head>
+    
+    
+    <!-- Page title -->
+	<title> {{l.navbar.1}} </title>
+    
+    <!-- meta -->
+   	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="لوحة التحكم">
+    
+    <!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="{{assets}}admin/images/favicon.png" /> 
+
+
+    <link rel="stylesheet" type="text/css" href="{{assets}}admin/css/ltr.css?v={{config.version_css}}" />    
+
+	<!-- JS script -->
+	<script type="text/javascript" src="{{assets}}admin/js/all.js"></script>
+	
+    <!-- check for javascript -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=http://www.google.com" />
+    </noscript>
+    
+    <!-- Raleway Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    
+    <!-- Light Gallery -->
+    <link type="text/css" rel="stylesheet" href="{{assets}}admin/lightGallery/css/lightgallery.min.css" /> 
+
+ </head>
+
+<body>
+
+
+    {% include "admin/elements/navbar.twig" %}
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+       
+         <!-- sidbar -->
+        {% include "admin/elements/sidebar.twig" %} 	
+        
+
+        {% block content %} {% endblock %}
+        
+		</div>
+		
+	</div>
+	
+    
+    <!-- Light Gallery -->    
+    <script src="{{assets}}admin/lightGallery/js/lightgallery.min.js?v={{config.version_css}}"></script>
+
+    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+    <script src="{{assets}}admin/js/jquery.mousewheel.min.js?v={{config.version_css}}"></script>
+
+    <!-- dropzone -->
+    <script src="{{assets}}admin/js/dropzone.min.js?v={{config.version_css}}"></script>    
+
+    <!-- main js -->
+    <script type="text/javascript" src="{{assets}}admin/js/main.js?v={{config.version_css}}"></script>
+
+
+</body>
+</html>
+{% endspaceless %}

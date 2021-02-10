@@ -1,0 +1,23 @@
+<div class="sidebar sidebar-main {% if user.role == 'colaborator' %}  hidden {% endif %}">
+
+    
+
+
+    <div class="sidebar-content">
+        
+        <div class="sidebar-category sidebar-category-visible mt-15">
+            <div class="category-content no-padding">
+                <ul class="navigation navigation-main navigation-accordion">
+                    <li><a href="{{ path_for('admin.index')}}"><i class="icon-home4"></i> <span> {{l.sidbar.1}} </span></a></li>
+                    <li><a href="{{ path_for('users')}}"><i class="icon-users"></i> <span>  {{l.sidbar.2}}</span></a></li>
+                    <li><a href="{{ path_for('sinistres')}}"><i class="icon-vcard"></i> <span> {{l.sidbar.3}} </span></a></li>
+                
+                    <li><a href="{{ path_for('payments')}}"><i class="icon-cash2"></i> <span> {{l.sidbar.5}} </span></a></li>
+                    <li><a href="{{ path_for('missions')}}"><i class="icon-map5"></i> <span> {{l.sidbar.6}} </span></a></li>
+                    <li><a href="{{ path_for('stats')}}"><i class="icon-stats-growth"></i> <span> {{l.sidbar.7}} </span></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

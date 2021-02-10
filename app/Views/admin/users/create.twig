@@ -1,0 +1,188 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.userscreate.1}} {% endblock %}
+{% block content %}
+
+<!-- Main content -->
+<div class="content-wrapper">
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>
+{{l.users_create.11}}</span></h1>
+</div>
+
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="الرئيسية"><i class="icon-home2 position-left"></i>{{l.sidbar.1}}</a></li>
+    <li class="active" ><a title="{{l.users_create.12}}" href="{{path_for('users')}}">{{l.users_create.12}}</a></li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+
+   
+   
+    <!-- Content area -->
+    <div class="content">
+        {% include "admin/elements/flash.twig" %}
+        
+   
+        <div class="col-md-12">
+            <div class="panel panel-flat col-md-12">
+                <div class="panel-body">
+                   <div id="result"></div>
+<!--                   id="createuser"-->
+                    <form class="form-horizontal"  method='post' action="{{path_for('users.store')}}" autocomplete="off">
+                        <fieldset class="content-group">
+                            <legend class="text-bold">{{l.users_create.11}}</legend>
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">{{l.users_create.1}}</label>
+                                <div class="col-lg-10">
+                                   
+<div class="input-group">
+ <input type="text" class="form-control frequired"  name="username" placeholder="{{l.users_create.1}}"   required>
+<span class="input-group-addon"><i class="icon-user"></i></span>
+</div>
+                                   
+                                   
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">{{l.users_create.9}}</label>
+                                <div class="col-lg-10">
+                                   
+                                   
+                                  <div class="input-group">
+     <input type="email" class="form-control frequired"   name="email" placeholder="{{l.users_create.9}}" required >
+    <span class="input-group-addon"><i class="icon-envelope"></i></span>
+</div>
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">{{l.users_create.10}}</label>
+                                <div class="col-lg-10">
+                                   
+                                 <div class="input-group">
+     <input type="password" autocomplete="new-password" value="{{ old.password }}" class="form-control frequired" name="password" id="password" placeholder="{{l.users_create.10}}" required> 
+   
+    <span class="input-group-addon"><i class="icon-lock2"></i></span>
+</div>
+                                   
+                                   
+                                   
+                                   
+                                  
+                                </div>
+                                
+                            </div>
+
+
+
+            <div class="form-group">
+            <label class="control-label col-lg-2">{{l.users_create.2}}</label>
+            <div class="col-lg-10">
+
+            <div class="input-group">
+            <input type="text"  class="form-control frequired" name="cin"  placeholder="{{l.users_create.2}}" required> 
+            <span class="input-group-addon"><i class=" icon-vcard"></i></span>
+            </div>
+
+            </div>
+            </div>
+
+
+         <div class="form-group">
+            <label class="control-label col-lg-2">{{l.users_create.3}}</label>
+            <div class="col-lg-10">
+
+            <div class="input-group">
+            <input type="number"  class="form-control frequired" name="phone"  placeholder="{{l.users_create.3}}" required> 
+            <span class="input-group-addon"><i class=" icon-iphone"></i></span>
+            </div>
+
+            </div>
+            </div>
+
+<div class="form-group">
+            <label class="control-label col-lg-2">{{l.users_create.4}}</label>
+            <div class="col-lg-10">
+
+            <div class="input-group">
+            <input type="text"  class="form-control frequired" name="ville"  placeholder="{{l.users_create.4}}" > 
+            <span class="input-group-addon"><i class="icon-pushpin"></i></span>
+            </div>
+
+            </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2">{{l.users_create.5}}</label>
+                <div class="col-lg-10">
+                <div class="input-group">
+                <input type="text"  class="form-control frequired" name="banck"  placeholder="{{l.users_create.5}}" > 
+                <span class="input-group-addon"><i class="icon-coin-dollar"></i></span>
+                </div>
+                </div>
+            </div>
+
+       
+
+
+            <div class="form-group">
+                <label class="control-label col-lg-2">{{l.users_create.6}}</label>
+                <div class="col-lg-10">
+                <div class="input-group">
+                <input type="text"  class="form-control frequired" name="rib"  placeholder="{{l.users_create.6}}" > 
+                <span class="input-group-addon"><i class="icon-more2"></i></span>
+                </div>
+                </div>
+            </div>
+
+
+
+
+
+                             
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">{{l.users_create.13}}</label>
+                                <div class="col-lg-10">
+                                 
+                                   
+                                        <select name="role" class="form-control">
+                                                <option value="colaborator" class="form-control">{{l.users_create.7}}</option>
+                                                <option value="assistante" class="form-control">{{l.users_create.8}}</option>
+                                        </select>  
+                                  
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary" id="Submit_Add_User">
+                               {{l.users_create.15}}
+                                <i class="icon-arrow-right13 position-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            
+{% endblock %}	

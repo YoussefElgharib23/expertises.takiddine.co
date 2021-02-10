@@ -1,0 +1,233 @@
+
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+     
+     
+<!-- Main content -->
+<div class="content-wrapper">
+
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.mission.1}}</span></h1>
+</div>
+
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i></a></li>
+    <li class="active" title="{{l.users.1}}" >{{l.mission.1}}</li>
+</ul>
+
+
+<ul class="breadcrumb-elements">
+        <li><a href="{{path_for('missions')}}">{{l.mission.2}}</a></li>
+        <li><a href="?type=attente">{{l.mission.3}}</a></li>
+        <li><a href="?type=reviser">{{l.mission.4}}</a></li>
+        <li><a href="?type=validee">{{l.mission.5}}</a></li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+		
+{% include "admin/elements/flash.twig" %}
+
+ <div class="col-md-12" >
+  <div class="col-md-6">
+    
+  </div>
+   <div class="col-md-6 notifications-select-wrapper">
+
+<div class="col-md-6 ">
+
+      <div class="form-group ">
+      <label ><b>{{l.mission.6}}</b></label>
+     <select class="form-control assistane_mission_list">
+          <option></option>
+          {% for item in assistante %}
+          <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+     </select>
+     </div>
+  </div>
+
+ <div class="col-md-6 ">
+      <div class="form-group ">
+      <label ><b>{{l.mission.7}}</b></label>
+     <select class="form-control colaborator_mission_list">
+          <option></option>
+          {% for item in colaborators %}
+          <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+     </select>
+     </div>
+  </div>
+
+  </div>
+  </div>
+
+ <div class="col-md-12 ">
+   <div class="panel panel-responsive">
+  <div class="panel-body">
+<div class="col-md-12 table-responsive">
+<table class='table'>
+  <thead>
+    <th><i class="icon-calendar3"></i>&nbsp;<b>{{l.mission.8}}</b></th>
+    <th><i class=" icon-list-ordered"></i>&nbsp;<b>{{l.mission.9}}</b></th>
+    <th><i class=" icon-arrow-right7"></i>&nbsp;<b>{{l.mission.10}}</b></th>
+    <th><i class="icon-people"></i>&nbsp;<b>{{l.mission.11}}</b></th>
+    <th><i class="icon-phone"></i>&nbsp;<b>{{l.mission.12}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.mission.13}}</b></th>
+    <th><i class="icon-people"></i>&nbsp;<b>{{l.mission.14}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.mission.15}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.mission.16}}</b></th>
+    <th><i class=""></i>&nbsp;<b>{{l.mission.17}}</b> </th>
+    <th><i class=" icon-checkmark4"></i>&nbsp;<b>{{l.mission.18}}</b></th>
+  </thead>
+<tbody>
+  {% for item in missions %}
+ <tr>
+       <td data-label="datecreation">{{item.created_at}}</td>
+      <td data-label="Mission">{{item.sinitre_id}}</td>
+      <td data-label="Etape">
+      {% if item.etape == 'encoure' %}
+        {{l.mission.19}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}
+
+      </td>
+      <td data-label="Collaborateur">{{item.colaborator.username}}</td>
+      <td data-label="tele"> <a href="tel:{{item.sinistre.telephone}}">{{item.sinistre.telephone}}</a></td>
+      <td data-label="Véhicule">{{item.sinistre.vehicule}}</td>
+      <td data-label="Assuré">{{item.sinistre.assure}}</td>
+      <td data-label="Imm">{{item.sinistre.matricule}}</td>
+      <td data-label="Imm WW">{{item.sinistre.matricule_ww}}</td>
+
+    <td data-label="Aperçu"><a href="{{path_for('missions.view',{ id :item.id})}}"     class="btn btn-success"><i class="icon-eye"></i> <span class="hidden-xs">{{l.mission.20}}</span></a>
+
+  {% if item.gallery is empty %}
+   <a href="{{path_for('missions.delete',{ id :item.id})}}"     class="btn btn-danger"><i class="icon-trash"></i> <span class="hidden-xs">{{l.mission.39}}</span></a>
+  {% endif  %}
+
+
+    </td>
+  <td data-label="Statue">
+   
+   
+   {% if (item.validated_at is not empty) and  (item.gallery is not empty ) %}
+       <b>{{l.mission.21}} : {{item.validated_at}}</b>
+   {% endif %}
+
+       
+   {% if (item.gallery is empty ) and (item.validated_at is empty) %}
+       <b>{{l.mission.22}} </b>
+   {% endif %}
+      
+      
+    {% if (item.gallery is not empty ) and (item.validated_at is empty) %} 
+       <a href="{{path_for('missions.validate',{ id :item.id})}}"     class="btn btn-success"><i class="icon-checkmark"></i> <span class="hidden-xs">{{l.mission.40}}</span></a>
+       <a href="{{path_for('missions.reject',{ id :item.id})}}" class="btn btn-danger"><i class="icon-cross2"></i> <span class="hidden-xs">{{l.mission.23}}</span></a>
+   {% endif %}
+
+  </td>
+  
+  </tr>
+  </tbody>
+  {% endfor %}
+ 
+   
+</table>
+
+ {% for item in missions %}
+<ul class="responsive_ul">
+  <li>{{l.mission.24}}</li>
+  <li>{{item.created_at}}</li>
+  <li> {{l.mission.25}} </li>
+  <li>{{item.sinitre_id}}</li>
+  <li>{{l.mission.26}}</li>
+  <li>
+    {% if item.etape == 'encoure' %}
+        en cours
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}
+  </li>
+  <li>{{l.mission.27}}</li>
+  <li>{{item.colaborator.username}}</li>
+  <li>{{l.mission.28}}</li>
+  <li>{{item.sinistre.telephone}}</li>
+  <li>{{l.mission.29}}</li>
+  <li>{{item.sinistre.vehicule}}</li>
+  <li>{{l.mission.30}}</li>
+  <li>{{item.sinistre.assure}}</li>
+  <li>{{l.mission.31}}</li>
+  <li>{{item.sinistre.matricule}}</li>
+  <li> {{l.mission.32}}</li>
+  <li>{{item.sinistre.matricule_ww}}</li>
+  <li>{{l.mission.33}}</li>
+  <li>
+
+    <a href="{{path_for('missions.view',{ id :item.id})}}"     class="btn btn-success"><i class="icon-eye"></i> <span class="hidden-xs">{{l.mission.33}}</span></a>
+
+
+
+  </li>
+  <li>{{l.mission.34}}</li>
+  <li>   
+   
+   {% if (item.validated_at is not empty) and  (item.gallery is not empty ) %}
+       <b>{{l.mission.35}} : {{item.validated_at}}</b>
+   {% endif %}
+
+       
+   {% if (item.gallery is empty ) and (item.validated_at is empty) %}
+       <b>{{l.mission.36}} </b>
+   {% endif %}
+      
+      
+    {% if (item.gallery is not empty ) and (item.validated_at is empty) %} 
+       <a href="{{path_for('missions.validate',{ id :item.id})}}"     class="btn btn-success"><i class="icon-checkmark"></i> <span class="hidden-xs">{{l.mission.40}}</span></a>
+       <a href="{{path_for('missions.reject',{ id :item.id})}}" class="btn btn-danger"><i class="icon-cross2"></i> <span class="hidden-xs">{{l.mission.37}}</span></a>
+   {% endif %}
+
+ </li>
+</ul>      
+      {% endfor %} 
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<center>{{pagination|raw}}</center>
+
+    </div>
+</div>
+   
+
+{% endblock %}	
+            

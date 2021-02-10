@@ -1,0 +1,136 @@
+<!-- Main navbar -->
+<div class="navbar navbar-inverse">
+<div class="navbar-header">
+<a class="navbar-brand" href="{{path_for('admin.index')}}">{{l.navbar.1}} <i class=" icon-car"></i></a>
+
+<ul class="nav navbar-nav visible-xs-block">
+
+    {% if user.role =='colaborator' %}
+    <li class="dropdown dropdownNotification">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-bell3"></i>
+            <span class="visible-xs-inline-block position-right hidden-xs">{{l.navbar.2}}</span>
+            {% if navbar_notifications|length != 0 %}
+            <span class="badge bg-warning-400 notificationsCount">            
+                {{navbar_notifications|length}}
+            </span>
+            {% endif %}
+        </a>
+        <div class="dropdown-menu dropdown-content width-350">
+            <ul class="media-list dropdown-content-body notificationsList">
+                {% for item in navbar_notifications %}
+                    <li></li>
+                <li class="media" class="link_notification" data-link=''>
+                    <div class="media-body">
+                        <a href="#" class="media-heading">
+                            <span class="text-semibold">{{item.user.username}}</span>
+                            <span class="media-annotation pull-right">{{item.created_at}}</span>
+                        </a>
+                        <span class="text-muted">{{item.content}}</span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="dropdown-content-footer">
+                <a href="javascript:;" class='setAllseen' data-popup="tooltip" title="Marquer comme lu"> {{l.navbar.3}} </a>
+            </div>
+        </div>
+    </li>
+    {% endif %}
+
+    
+    <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+    
+    <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+    
+</ul>
+</div>
+
+<div class="navbar-collapse collapse" id="navbar-mobile">
+
+
+
+
+
+
+<ul class="nav navbar-nav">
+
+
+
+<li class="dropdown dropdownNotification">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="icon-bell3"></i>
+    <span class="visible-xs-inline-block position-right">{{l.navbar.6}}</span>
+    {% if navbar_notifications|length != 0 %}
+    <span class="badge bg-warning-400 notificationsCount">            
+        {{navbar_notifications|length}}
+    </span>
+    {% endif %}
+</a>
+
+                <div class="dropdown-menu dropdown-content width-350">
+                    
+
+                    <ul class="media-list dropdown-content-body notificationsList">
+
+                        {% for item in navbar_notifications %}
+                        <li class="media" class="link_notification" data-link=''>
+                            <div class="media-body">
+                                <a href="#" class="media-heading">
+                                    <span class="text-semibold">{{item.user.username}}</span>
+                                    <span class="media-annotation pull-right">{{item.created_at}}</span>
+                                </a>
+                                <span class="text-muted">{{item.content}}</span>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+
+                    </ul>
+
+                    <div class="dropdown-content-footer">
+                        <a href="javascript:;" class='setAllseen' data-popup="tooltip" title="Marquer comme lu"> {{l.navbar.5}} </a>
+                    </div>
+                </div>
+            </li>
+
+
+    <li  {% if user.role == 'colaborator' %} style='display:none;' {% endif %}><a class="sidebar-control sidebar-main-toggle hidden-xs "><i class="icon-paragraph-justify3"></i></a></li>
+   
+    
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+   
+
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-earth"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="?lang=fr">Francàis</a></li>
+            <li><a href="?lang=ar">العربية</a></li>
+        </ul>
+    </li>
+   
+
+   <li class="hidden-xs">
+            <a href="#" onClick="go_full_screen();" ><i class="icon-enlarge"></i></a>
+    </li>
+   
+    <li class="dropdown dropdown-user">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            <span>
+                {{admin.full_name}}
+            </span>
+            <i class="caret"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="{{path_for('logout')}}"><i class="icon-switch2"></i>{{l.navbar.4}}</a></li>
+        </ul>
+    </li>
+</ul>
+</div>
+</div>
+<!-- /main navbar -->

@@ -1,0 +1,232 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.home.28}}{% endblock %}
+
+{% block content %}
+
+
+
+
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Content area -->
+<div class="content">
+        
+
+<!-- statistiques -->
+<div class="row">
+                
+
+
+<h1 id="la_date">{{l.page.1}} </h1>
+
+        <a href="{{path_for('sinistres')}}">
+        <div class="col-sm-6 col-md-3">
+            <div class="panel panel-body bg-blue-400 has-bg-image ">
+                <div class="media no-margin">
+                    <div class="media-body">
+                        <h3 class="no-margin">{{stats.sinistre}}</h3>
+                        <span class="text-uppercase text-size-mini"> {{l.page.2}}</span>
+                    </div>
+                    <div class="media-right media-middle">
+                        <i class="icon-basket icon-3x opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+        <a href="{{path_for('sinistres')}}">
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-body bg-danger-400 has-bg-image">
+                    <div class="media no-margin">
+                        <div class="media-body">
+                            <h3 class="no-margin">{{stats.sinistre_complete}}</h3>
+                            <span class="text-uppercase text-size-mini">{{l.page.3}}</span>
+                        </div>
+                        <div class="media-right media-middle">
+                            <i class="icon-file-empty2 icon-3x opacity-75"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{{path_for('users')}}">
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-body bg-success-400 has-bg-image">
+                    <div class="media no-margin">
+                    <div class="media-body text-left">
+                            <h3 class="no-margin">{{stats.membres}}</h3>
+                            <span class="text-uppercase text-size-mini">{{l.page.4}}</span>
+                        </div>
+                        <div class="media-right media-middle">
+                            <i class="icon-users2 icon-3x opacity-75"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{{path_for('missions')}}">
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-body bg-indigo-400 has-bg-image">
+                    <div class="media no-margin">
+                        <div class="media-body text-left">
+                            <h3 class="no-margin">{{stats.mission}}</h3>
+                            <span class="text-uppercase text-size-mini">{{l.page.5}}</span>
+                        </div>
+                        <div class="media-right media-middle">
+                            <i class="icon-envelop2 icon-3x opacity-75"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--// statistiques -->
+
+
+<div class="row">
+
+    <div class="col-md-8">
+        <h1 class="home_title">{{l.page.6}}</h1>
+        <div class="panel table-panel">
+            <div class="panel-body table-responsive">
+<table class='table'>
+    <thead>
+  <tr>
+  <th><i class="icon-folder-open"></i>&nbsp;&nbsp;<b>{{l.page.7}}</b></th>
+    <th><i class="icon-calendar3"></i><b> &nbsp;{{l.page.8}}</b></th>
+     <th><i class=" icon-man"></i>&nbsp;<b>{{l.page.9}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.page.10}}</b></th>
+   <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.page.11}}</b></th>
+   <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.page.12}}</b></th>
+    <th><i class=" icon-phone"></i>&nbsp;<b>{{l.page.13}}</b></th>
+    <th><i class="icon-reading"></i>&nbsp;<b>{{l.page.14}}</b></th>
+    <th><i class=" icon-people"></i>&nbsp;<b>{{l.page.15}}</b></th>
+    
+  </tr>
+</thead>
+  {% for item in sinistres %}
+  <tr>
+    <td data-label="N°Dossier "><b>N°</b>{{item.id}}</td>
+    <td data-label="Date">{{item.created_at}}</td>
+    <td data-label="Assure">{{item.assure}}</td>
+    <td data-label="Immatriculation">{{item.matricule}}</td>
+    <td data-label="Immatriculation WW">{{item.matricule_ww}}</td>
+    <td data-label="véhicule">{{item.vehicule}}</td>
+    <td data-label="Tele"><a href="tel:{{item.telephone}}">{{item.telephone}}</a></td>
+    <td data-label="Assisstante">{{item.assistant.username}}</td>
+    <td data-label="Collaborateur">{{item.colaborator.username}}</td>
+  </tr>
+ {% endfor %}
+</table>
+
+
+
+
+  {% for item in sinistres %}
+
+ <ul class="responsive_ul">
+    <li>{{l.page.7}} </li>
+    <li>{{item.id}}</li>
+    <li>{{l.page.8}}</li>
+    <li>{{item.created_at}}</li>
+    <li>{{l.page.9}}</li>
+    <li>{{item.assure}}</li>
+    <li>{{l.page.10}}</li>
+    <li>{{item.matricule}}</td>
+    <li>{{l.page.11}}</li>
+    <li>{{item.matricule_ww}}</li>
+    <li>{{l.page.12}}</li>
+    <li>{{item.vehicule}}</li>
+    <li>{{l.page.13}}</li>
+    <li><a href="tel:{{item.telephone}}">{{item.telephone}}</a></li>
+    <li>{{l.page.14}}</li>
+    <li>{{item.assistant.username}}</li>
+    <li>{{l.page.15}}</li>
+    <li>{{item.colaborator.username}}</li>
+</ul>
+ {% endfor %}
+
+
+</div>
+<a href="{{path_for('sinistres')}}" class="btn btn-primary pull-right voistous" style="margin-top:15px;"><i class="icon-eye"></i>{{l.page.16}}</a>
+
+        </div>
+    </div>
+
+
+
+<div class="col-md-4">
+    <h1 class="home_title">{{l.page.17}}</h1>
+    <div class="panel table-panel">
+        <div class="panel-body table-responsive">
+         <table class='table'>
+            <thead>
+          <tr>
+            <th><i class=" icon-list-ordered"></i>&nbsp;<b>{{l.page.18}}</b></th>
+    <th><i class=" icon-arrow-right7"></i>&nbsp;<b>{{l.page.19}}</b></th>
+    <th><i class="icon-people"></i>&nbsp;<b>{{l.page.20}}</b></th>
+    <th><i class="icon-man"></i>&nbsp;<b>{{l.page.21}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.page.22}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.page.23}}</b></th>
+    <th><i class="icon-car"></i>&nbsp;<b>{{l.page.24}}</b></th>
+    <th><i class="icon-reading"></i>&nbsp;<b>{{l.page.25}}</b></th>
+          </tr>
+      </thead>
+          
+           {% for item in missions %}
+  <tr>
+    <td data-label="Mission"><b>N°</b>{{item.id}}</td>
+    <td data-label="Etape">
+      {% if item.etape == 'encoure' %}
+       {{l.page.29}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}
+    </td>
+    <td data-label="Collaborateur">{{item.sinistre.colaborator.username}}</td>
+    <td data-label="Assuré">{{item.sinistre.assure}}</td>
+    <td data-label="Véhicule">{{item.sinistre.vehicule}}</td>
+    <td data-label="Imm">{{item.sinistre.matricule}}</td>
+    <td data-label="Imm WW">{{item.sinistre.matricule_ww}}</td>
+    <td data-label="Assistante">{{item.assistant.username}}</td>
+  </tr>
+ {% endfor %}
+           
+        </table>
+
+
+   {% for item in missions %}
+<ul class="responsive_ul">
+    <li>{{l.page.27}}</li>
+    <li>{{item.sinistre.colaborator.username}}</li>
+    <li>Etape</li>
+    <li>   {% if item.etape == 'encoure' %}
+       {{l.page.29}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}</li>
+    <li> {{l.page.30}} </li>
+    <li>{{item.sinistre.colaborator.username}}</li>
+    <li>{{l.page.31}}</li>
+    <li>{{item.sinistre.assure}}</li>
+    <li>{{l.page.32}}</li>
+    <li>{{item.sinistre.vehicule}}</li>
+    <li>{{l.page.33}}</li>
+    <li>{{item.sinistre.matricule}}</li>
+    <li> {{l.page.34}}</li>
+    <li>{{item.sinistre.matricule_ww}}</li>
+    <li>{{l.page.35}}</li>
+    <li>{{item.assistant.username}}</li>
+</ul>
+ {% endfor %}
+        </div>
+    </div>
+    <a href="{{path_for('missions')}}" class="btn btn-primary pull-right" ><i class="icon-eye"></i>{{l.page.36}}</a>
+    </div>
+</div>
+
+
+</div>
+</div>
+{% endblock %}

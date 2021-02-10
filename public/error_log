@@ -1,0 +1,242 @@
+[12-Mar-2020 14:06:37 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:07:08 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:13:45 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:13:45 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:13:54 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:13:54 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:14:01 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:14:01 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:14:20 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:14:20 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:14:25 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:14:25 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:14:29 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:14:29 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:14:30 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:14:30 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:15:14 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:15:14 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:15:19 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:15:19 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:15:19 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:15:19 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:16:45 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:16:45 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:01 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:01 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:05 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:05 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:10 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:10 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:12 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:12 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:14 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:14 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:19 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:19 Europe/Warsaw] PHP Notice:  Trying to get property 'role' of non-object in /home/medizodx/basiri.mediaman.website/app/Controllers/MissionsController.php on line 67
+[12-Mar-2020 14:17:20 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:20 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:20 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:20 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:17:24 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:17:24 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:18:17 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:18:17 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:18:24 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:18:24 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:19:07 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:19:07 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:20:53 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:20:53 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:21:48 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:21:48 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:21:53 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:21:53 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:23:01 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:23:01 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:23:28 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:23:28 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:24:49 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:24:49 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:24:50 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:24:50 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:26:45 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:26:46 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:29:04 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:36:44 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:37:06 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:39:48 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:39:48 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:39:49 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:39:49 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:40:09 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/medizodx/basiri.mediaman.website/app/container.php on line 180
+[12-Mar-2020 14:40:09 Europe/Warsaw] PHP Fatal error:  Uncaught RuntimeException: Unexpected data in output buffer. Maybe you have characters before an opening <?php tag? in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php:621
+Stack trace:
+#0 /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php(317): Slim\App->finalize(Object(Slim\Http\Response))
+#1 /home/medizodx/basiri.mediaman.website/public/index.php(4): Slim\App->run()
+#2 {main}
+  thrown in /home/medizodx/basiri.mediaman.website/vendor/slim/slim/Slim/App.php on line 621
+[12-Mar-2020 14:40:41 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:44:36 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 14:56:22 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 15:51:40 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 16:22:12 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 19:49:39 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 22:10:12 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 22:10:27 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37
+[12-Mar-2020 22:11:34 Europe/Warsaw] PHP Notice:  session_start(): A session had already been started - ignoring in /home/medizodx/basiri.mediaman.website/app/Helpers/Auth.php on line 37

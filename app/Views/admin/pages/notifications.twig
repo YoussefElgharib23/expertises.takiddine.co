@@ -1,0 +1,102 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+         
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.notification.1}}</span></h1>
+</div>
+
+
+</div>
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="{{path_for('admin.index')}}" title="Les Notifications"><i class="icon-home2 position-left"></i>{{l.bread.1}}</a></li>
+            <li class="active" title="{{l.users.1}}">{{l.notification.1}}</li>
+        </ul>
+    </div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+    
+{% include "admin/elements/flash.twig" %}
+
+
+
+
+<style>
+.notifications_select {
+  width:48%;
+  margin-left:1%;
+}
+.notifications-select-wrapper{
+  padding-top:25px;
+}
+</style>
+
+  </div>
+   <div class="col-md-12">
+<div class="panel panel-flat table-panel">
+<div class="panel-body table-responsive">
+<table class='table'>
+   <thead>
+  <tr>
+    <th><i class=" icon-bell3"></i>&nbsp;&nbsp;<b>{{l.notification.1}}</b></th>
+    <th><i class="icon-envelop5"></i>&nbsp;&nbsp; <b>{{l.notification.4}}</b></th>
+     <th><i class="icon-calendar3"></i>&nbsp;&nbsp; <b>{{l.notification.5}}</b></th>
+  </tr>
+   </thead>
+  {% for item in notifications %}
+  <tr>
+     <td data-label="Notifications">{{item.content}}</td>
+     <td data-label="Recevoir">{{item.recevoir.username}}</td>
+     <td data-label="Date">{{item.recevoir.created_at}}</td>
+    
+  </tr>
+  {% endfor %}
+</table>
+{% for item in notifications %}
+      <ul class="responsive_ul">
+        <li>{{l.notification.6}}</li>
+        <li>{{item.content}}</li>
+        <li>{{l.notification.7}}</li>
+        <li>{{item.recevoir.username}}</li>
+        <li>{{l.notification.8}}</li>
+        <li>{{item.recevoir.created_at}}</li>
+      </ul>  
+      {% endfor %}
+
+</div>
+</div>
+</div>
+     </div>
+ 
+
+
+
+
+
+
+
+<center>{{pagination|raw}}</center>
+
+    </div>
+</div>
+   
+
+{% endblock %}  
+            
+

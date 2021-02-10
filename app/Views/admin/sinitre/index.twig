@@ -1,0 +1,343 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+        
+
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.sinistre.1}}</span></h1>
+</div>
+
+<div class="heading-elements">
+<a href="{{ path_for('sinistres.create') }}" class="btn bg-blue btn-labeled heading-btn"><b><i class="icon-plus3"></i></b>{{l.sinistre.2}}</a>
+
+</div>
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i>{{l.bread.1}}</a></li>
+    <li class="active" title="{{l.users.1}}" ><b>{{l.sinistre.3}}</b></li>
+</ul>
+
+
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+		
+{% include "admin/elements/flash.twig" %}
+
+<form action="{{path_for('sinistres.search')}}" id='sinistres-search' method="POST">
+<div class="panel ">
+<div class="panel-body">
+
+<div class="row">
+
+<div class="col-md-12">
+
+  <h3 class="col-md-12">  <b>{{l.sinistre.4}}</b></h3>  
+  
+  <div class="form-group col-md-10">
+     <input type="text" class="form-control" name="q" placeholder="{{l.sinistre.5}}">
+  </div>
+  <div class="form-group col-md-2">
+    <button type="submit" class="btn btn-success btn-block"><b>{{l.sinistre.4}}</b>&nbsp;&nbsp;<i class="icon-search4"></i></button> 
+  </div>
+  
+  
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label for="date"><b>{{l.sinistre.7}}</b></label>
+       <input type="text"   data-date-format="dd/mm/yyyy"  class="form-control datepicker" name="date"  placeholder="{{l.sinistre.7}}" />
+    </div>
+  </div> 
+  
+
+
+
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label ><b>{{l.sinistre.8}}</b></label>
+          <select class="form-control" name="colaborator_selector">
+          <option value="notselected">{{l.sinistre.9}}</option>
+          {% for item in colaborators %}
+          <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+          </select>
+    </div>
+  </div> 
+
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label><b>{{l.sinistre.10}}</b></label>
+        <select class="form-control" name="company">
+          <option></option>
+          <option value="Axa assurance maroc">Axa assurance maroc</option>
+          <option value="Allianz">Allianz</option>
+          <option value="Saham assurance">Saham assurance</option>
+          <option value="Sanad">Sanad</option>
+          <option value="Mamda">Mamda</option>
+          <option value="Mcma">Mcma</option>
+          <option value="Matu">Matu</option>
+          <option value="Cat">Cat</option>
+          <option value="Atlanta">Atlanta</option>
+          <option value="wafa assurence">wafa assurence</option>
+        </select>
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+</div>
+</form>
+
+
+
+
+
+
+<div class="panel table-panel">
+  <div class="panel-body">
+<div class="col-md-12 table-responsive">
+<table class='table table-sinistre'>
+  <thead>
+    <tr>
+    <th><i class="icon-folder-open"></i>&nbsp;&nbsp;<b>N°</b></th>
+    <th><i class="icon-folder-open"></i>&nbsp;&nbsp;<b>{{l.sinistre.12}}</b></th>
+    <th><i class="icon-calendar3"></i><b> &nbsp;{{l.sinistre.13}}</b></th>
+    <th><i class="icon-calendar3"></i><b> &nbsp;{{l.sinistre.14}} </b></th>
+    <th><i class=" icon-man"></i>&nbsp;<b>{{l.sinistre.15}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.sinistre.16}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.sinistre.17}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.sinistre.18}} </b></th>
+    <th><i class=" icon-phone"></i>&nbsp;<b>{{l.sinistre.19}}</b></th>
+    <th><i class="icon-reading"></i>&nbsp;<b>{{l.sinistre.20}}</b></th>
+    <th><i class=" icon-people"></i>&nbsp;<b>{{l.sinistre.21}}</b></th>
+    <th><i class=" icon-undo2"></i>&nbsp;<b>{{l.sinistre.22}}</b></th>
+    <th><i class="icon-spinner"></i> &nbsp;<b>{{l.sinistre.23}} </b></th>
+    <th><i class=" icon-redo2"></i>&nbsp;<b>{{l.sinistre.24}}</b></th>
+    <th><i class=" icon-touch"></i>&nbsp;<b>{{l.sinistre.25}}</b></th>
+    <th><i class=""></i>&nbsp;<b>{{l.sinistre.26}}</b></th>
+  </tr>
+  </thead>
+
+
+
+
+    {% for item in sinsitres %}
+  <tr>
+    <td data-label="{{item.id}}"><b>N°</b>{{item.id}}</td>
+    <td data-label="{{item.folder_id}}"><b></b>{{item.folder_id}}</td>
+    <td data-label="{{item.created_at|dateOnly}}">{{item.created_at|dateOnly}}</td>
+    <td data-label="{{item.date_sinistre}}">{{item.date_sinistre}}</td>
+    <td data-label="{{item.assure}}">{{item.assure}}</td>
+    <td data-label="{{item.vehicule}}">{{item.vehicule}}</td>
+    <td data-label="{{item.matricule}}">{{item.matricule}}</td>
+    <td data-label="{{item.matricule_ww}}">WW{{item.matricule_ww}}</td>
+    <td data-label="{{item.telephone}}">{{item.telephone}}</td>
+    <td data-label="{{item.assistant.username}}">{{item.assistant.username}}</td>
+    <td data-label="{{item.colaborator.username}}">{{item.colaborator.username}}</td>
+    <td data-label="{{item.avant_id}}">
+      {% if item.avant_id  is not empty %} 
+      <a href="{{path_for('missions.view',{ id : item.avant_id })}}" class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+         <a href="javascript:;" data-toggle="modal" data-target="#sendmission" data-etape="avant"  data-sinistre="{{item.id}}"    class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}
+    </td>
+    <td data-label="{{item.encoure_id}}">
+       {% if item.encoure_id  is not empty %} 
+        <a href="{{path_for('missions.view',{ id : item.encoure_id })}}"       class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+       <a href="javascript:;"data-toggle="modal" data-etape="encoure"  data-sinistre="{{item.id}}"   data-target="#sendmission"   class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}
+    </td>
+    <td data-label="{{item.apres_id}}">
+       {% if item.apres_id  is not empty %} 
+        <a href="{{path_for('missions.view',{ id : item.apres_id })}}"      class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+       <a href="javascript:;"  data-toggle="modal" data-etape="apres"  data-sinistre="{{item.id}}"   data-target="#sendmission"   class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}
+    </td>
+    <td data-label="{{item.id}}">
+      <a href="{{path_for('sinistres.edit',{ id : item.id })}}" class="btn btn-success"><i class="icon-pencil5"></i>&nbsp;</a>
+      <a data-toggle="modal" data-target="#deleteModal"  href='javascript():;' data-id="{{path_for('sinistres.delete',{ id : item.id })}}" class="btn btn-danger remove-sinistre-btn"><i class="icon-trash"></i>&nbsp;</a>
+    </td>
+      <td data-label="{{item.id}}">
+      {% if item.paied_at is empty %}
+      <a  href="{{path_for('sinistres.setPaied',{ id : item.id })}}" class="show_pay_modal btn btn-success"><i class=" icon-cash4">&nbsp; {{l.sinistre.38}} </i>&nbsp;</a>
+      {% else %}
+       Payer a : {{item.paied_at|dateOnly}}
+      {% endif %}
+    </td> 
+    </tr>
+    {% endfor %}
+  
+</table>
+      {% for item in sinsitres %} 
+ <ul class="responsive_ul">
+   <li> N°</li>
+   <li>{{item.id}}</li>
+   <li> {{l.sinistre.12}} </li>
+   <li>{{item.folder_id}}</li>
+   <li> {{l.sinistre.13}}  </li>
+   <li>{{item.created_at|dateOnly}}</li>
+   <li>{{l.sinistre.14}}</li>
+   <li>{{item.date_sinistre}}</li>
+   <li>{{l.sinistre.15}}</li>
+   <li>{{item.assure}}</li>
+   <li>{{l.sinistre.16}}</li>
+   <li>{{item.vehicule}}</li>
+   <li>{{l.sinistre.17}}</li>
+   <li>{{item.matricule}}</li>
+   <li>  {{l.sinistre.18}} </li>
+   <li>{{item.matricule_ww}}</li>
+   <li>{{l.sinistre.19}}</li>
+   <li>{{item.telephone}}</li>
+   <li>{{l.sinistre.20}}</li>
+   <li>{{item.assistant.username}}</li>
+   <li>{{l.sinistre.21}}</li>
+   <li>{{item.colaborator.username}}</li>
+   <li>{{l.sinistre.22}}</li>
+   <li> {% if item.avant_id  is not empty %} 
+      <a href="{{path_for('missions.view',{ id : item.avant_id })}}" class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+         <a href="javascript:;" data-toggle="modal" data-target="#sendmission" data-etape="avant"  data-sinistre="{{item.id}}"    class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}</li>
+   <li> En cours</li>
+   <li> {% if item.encoure_id  is not empty %} 
+        <a href="{{path_for('missions.view',{ id : item.encoure_id })}}"       class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+       <a href="javascript:;"data-toggle="modal" data-etape="encoure"  data-sinistre="{{item.id}}"   data-target="#sendmission"   class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}</li>
+   <li>Apres</li>
+   <li>    {% if item.apres_id  is not empty %} 
+        <a href="{{path_for('missions.view',{ id : item.apres_id })}}"      class="btn btn-primary"><i class="icon-eye"></i>&nbsp;</a>
+       {% else %}
+       <a href="javascript:;"  data-toggle="modal" data-etape="apres"  data-sinistre="{{item.id}}"   data-target="#sendmission"   class="btn btn-warning send_btn"><i class=" icon-upload4"></i>&nbsp; </a>
+       {% endif %}</li>
+   <li>Action</li>
+   <li> <a href="{{path_for('sinistres.edit',{ id : item.id })}}" class="btn btn-success"><i class="icon-pencil5"></i>&nbsp;</a>
+      <a data-toggle="modal" data-target="#deleteModal"  href='javascript():;' data-id="{{path_for('sinistres.delete',{ id : item.id })}}" class="btn btn-danger remove-sinistre-btn"><i class="icon-trash"></i>&nbsp;</a></li>
+   <li>{{l.sinistre.38}}</li>
+   <li>{% if item.paied_at is empty %}
+      <a  href="{{path_for('sinistres.setPaied',{ id : item.id })}}" class="show_pay_modal btn btn-success"><i class=" icon-cash4">&nbsp;{{l.sinistre.38}}</i>&nbsp;</a>
+      {% else %}
+       Payer a : {{item.paied_at|dateOnly}}
+      {% endif %}</li>
+ </ul> 
+ {% endfor %}  
+</div>
+</div>
+</div>
+
+
+
+<!-- Modal pay user -->
+<div class="modal fade" id="paySinistreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+          <i class="icon-warning"></i>
+          {{l.sinistre.27}}
+        </h4>
+      </div>
+      <div class="modal-body">
+{{l.sinistre.28}}      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-default" data-dismiss="modal">{{l.sinistre.29}}</a>
+        <a href="" class="btn btn-danger btn-payer-colaborator">{{l.sinistre.30}}e</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal delete sinistre -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+          <i class="icon-warning"></i>
+          {{l.sinistre.31}}
+        </h4>
+      </div>
+      <div class="modal-body">
+{{l.sinistre.32}}      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-default" data-dismiss="modal">{{l.sinistre.33}}</a>
+        <a href="" class="btn btn-danger btn-delete-modal">{{l.sinistre.34}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal envoyer mission -->
+<div class="modal fade" id="sendmission"  tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+
+        <form action="{{path_for("missions.send")}}" method='post'>
+
+      <div class="alert alert-danger" style="display:none;">{{l.sinistre.35}}</div>
+
+           <div class="form-group">
+          <label for="">{{l.sinistre.35}}</label>
+        <select name="colaborator_id" id="" class="form-control" required>
+          <option></option>
+          {% for item in colaborators %}
+            <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="{{l.sinistre.39}}" class="btn btn-block btn-success btn-envoyermission">
+        
+        </div>
+          <input type="hidden" name="sinistre_id" id="sinistre_id" />
+          <input type="hidden" name="etape" id="etape" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{l.sinistre.37}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<center>{{pagination|raw}}</center>
+
+    </div>
+</div>
+   
+
+{% endblock %}	
+            

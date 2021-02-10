@@ -1,0 +1,108 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+     
+         
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1>  <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.payements.1}}</span></h1>
+</div>
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i>{{l.bread.1}}</a></li>
+    <li class="active" title="{{l.users.1}}" >{{l.payements.1}}</li>
+</ul>
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+   <div class="col-md-12" >
+  <div class="col-md-6">
+    
+  </div>
+   <div class="col-md-6 notifications-select-wrapper">
+ <div class="col-md-6 "></div>
+ <div class="col-md-6 ">
+      <div class="form-group ">
+      <label ><b>{{l.payements.2}}</b></label>
+     <select class="form-control colaborator_payments_list">
+          <option></option>
+          {% for item in colaborators %}
+          <option value="?colaborateur={{item.id}}">{{item.username}}</option>
+          {% endfor %}
+     </select>
+     </div>
+  </div>
+
+  </div>
+  </div>
+  
+  {% if payements is not  empty %}
+	<div class="col-md-12">
+        <div class="panel panel-flat table-panel">
+    <div class="panel-body table-responsive">
+<table class='table table-sinistre'>
+  <thead>
+    <tr>
+    <th><i class="icon-folder-open"></i>&nbsp;&nbsp;<b>{{l.payements.3}}</b></th>
+    <th><i class="icon-calendar3"></i><b> &nbsp;{{l.payements.4}}</b></th>
+    <th><i class=" icon-people"></i>&nbsp;<b>{{l.payements.6}}</b></th>
+  </tr>
+   </thead>
+  {% for item in payements %}
+ <tr>
+      <td data-label="N°Dossier">  N°{{item.sinistre_id}}</td>
+    <td data-label="Date">{{item.created_at|dateOnly}}</td>
+    <td data-label="Collaborateur">{{item.colaborator.username}}</td>
+    
+  </tr>
+
+  {% endfor %}
+  
+  </table>	
+      {% for item in payements %}
+      <ul class="responsive_ul">
+        <li>{{l.payements.7}}</li>
+        <li>{{item.sinistre_id}}</li>
+        <li>{{l.payements.8}}</li>
+        <li>{{item.created_at|dateOnly}}</li>
+        <li>{{l.payements.9}}</li>
+        <li>{{item.colaborator.username}}</li>
+      </ul>  
+       {% endfor %}
+  </div>
+</div>
+  </div>
+{% else %}
+
+  <h1 class="text-center">{{l.payements.10}}</h1>
+
+{% endif %}
+
+  </div>
+{% include "admin/elements/flash.twig" %}
+
+
+<center>{{pagination|raw}}</center>
+
+    </div>
+</div>
+  
+
+{% endblock %}	
+            

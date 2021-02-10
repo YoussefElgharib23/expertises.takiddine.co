@@ -1,0 +1,270 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.users.1}} {% endblock %}
+
+{% block content %}
+   
+        
+      
+         
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Page header -->
+<div class="page-header page-header-default ">
+<div class="page-header-content">
+
+<div class="page-title">
+<h1> <span class="text-semibold"><i class="icon-arrow-right6 position-left goback"></i>{{l.missioncolaborateur.1}}</span></h1>
+</div>
+
+
+</div>
+        <div class="breadcrumb-line">
+<ul class="breadcrumb">
+    <li><a href="{{path_for('admin.index')}}" title="{{l.bread.1}}"><i class="icon-home2 position-left"></i></a></li>
+    <li class="active" title="{{l.users.1}}" >{{l.missioncolaborateur.2}}</li>
+</ul>
+<ul class="breadcrumb-elements hidden">
+              <li><a href="?view=attent"><i class="icon-alarm-check position-left"></i> {{l.missioncolaborateur.3}}</a></li>
+              <li><a href="?view=encours"><i class="icon-spinner3 position-left"></i> {{l.missioncolaborateur.4}}</a></li>
+              <li><a href="?view=complete"><i class=" icon-checkmark4 position-left"></i> {{l.missioncolaborateur.5}}</a></li>
+             
+            </ul>
+
+</div>
+</div>
+<!-- /page header -->
+
+
+
+
+<!-- Content area -->
+<div class="content">
+
+{% if draft is not empty %}
+<div class="row">
+<div class="camel">
+    <div class="col-md-12">
+<div class="col-md-6">
+  <a class="col-md-4 btn btn-danger" href="{{path_for('mission.clean.draft')}}"> إلغاء المهمة   </a>
+  <a class="col-md-4 btn btn-success continue-draft envoyer-les-images" data-id="{{draft.mission_id}}"   href="javascript:;" >     
+  متابعة
+  </a>
+</div>
+<div class="col-md-6">
+  <h2>لديك مهمة لم تنته  بعد</h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-12 gallery_draft" style='display:none;'>
+  {% for item in draft.gallery%}
+    <div class="col-md-3">
+      <div class="box-img">
+        <img src="{{draft.url}}{{item}}" />
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+
+<div style='display:none;' class="col-md-12 dropzone-uploader-section">
+  <input type="hidden" id='mission_to_upload_id'>
+  <div class="panel">
+    <div class="panel-body">
+        <div class="dropzone" id="myDZ" >
+         <div class="dz-default dz-message"><span>{{l.missioncolaborateur.6}}</span>
+         <a href="javascript:;" class="btn btn-primary" id="openSelect">{{l.missioncolaborateur.6}}</a>
+         </div>         
+        </div>
+        <input type="submit" class="btn btn-block btn-primary send_imgs_and_notity" style="display:none;" value="Envoyer images">
+        
+        </div>
+
+    </div>
+  </div>
+
+
+
+<div class="col-md-12">
+<form action="{{path_for('colaborator.sinistre.search')}}" id='sinistres-search' method="POST">
+<div class="panel ">
+<div class="panel-body">
+
+<div class="row">
+
+<div class="col-md-12">
+
+  <h3 class="col-md-12">  <b>{{l.sinistre.4}}</b></h3>  
+  
+  <div class="form-group col-md-10">
+     <input type="text" class="form-control" name="q" placeholder="{{l.sinistre.5}}">
+  </div>
+  <div class="form-group col-md-2">
+    <button type="submit" class="btn btn-success btn-block"><b>{{l.sinistre.4}}</b>&nbsp;&nbsp;<i class="icon-search4"></i></button> 
+  </div>
+  
+  
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label for="date"><b>{{l.sinistre.7}}</b></label>
+       <input type="text"   data-date-format="dd/mm/yyyy"  class="form-control datepicker" name="date"  placeholder="{{l.sinistre.7}}" />
+    </div>
+  </div> 
+  
+
+
+
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label ><b>{{l.sinistre.8}}</b></label>
+          <select class="form-control" name="colaborator_selector">
+          <option value="notselected">{{l.sinistre.9}}</option>
+          {% for item in colaborators %}
+          <option value="{{item.id}}">{{item.username}}</option>
+          {% endfor %}
+          </select>
+    </div>
+  </div> 
+
+  <div class="col-md-4">
+    <div class="form-group ">
+      <label><b>{{l.sinistre.10}}</b></label>
+        <select class="form-control" name="company">
+          <option></option>
+          <option value="Axa assurance maroc">Axa assurance maroc</option>
+          <option value="Allianz">Allianz</option>
+          <option value="Saham assurance">Saham assurance</option>
+          <option value="Sanad">Sanad</option>
+          <option value="Mamda">Mamda</option>
+          <option value="Mcma">Mcma</option>
+          <option value="Matu">Matu</option>
+          <option value="Cat">Cat</option>
+          <option value="Atlanta">Atlanta</option>
+          <option value="wafa assurence">wafa assurence</option>
+        </select>
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+</div>
+</form>
+</div>
+
+
+
+
+
+{% include "admin/elements/flash.twig" %}
+
+   <div class="col-md-12 ">
+   <div class="panel panel-responsive">
+   <div class="panel-body">
+   <div class="col-md-12b table-responsive">
+   <table class='table'>
+  <thead>
+    <th><i class=" icon-list-ordered"></i>&nbsp;<b>{{l.missioncolaborateur.11}}</b></th>
+    <th><i class=" icon-arrow-right7"></i>&nbsp;<b>{{l.missioncolaborateur.12}}</b></th>
+    <th><i class="icon-people"></i>&nbsp;<b>{{l.missioncolaborateur.13}}</b></th>
+        <th><i class=" icon-man"></i>&nbsp;<b>{{l.missioncolaborateur.14}}</b></th>
+        <th><i class=" icon-man"></i>&nbsp;<b>{{l.missioncolaborateur.15}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.missioncolaborateur.16}}</b></th>
+    <th><i class=" icon-car"></i>&nbsp;&nbsp;<b>{{l.missioncolaborateur.17}}</b></th>
+    <th><i class=" icon-phone"></i>&nbsp;<b>{{l.missioncolaborateur.18}}</b></th>
+    <th><i class=" icon-gallery"></i>&nbsp;<b>{{l.missioncolaborateur.19}}</b></th>
+    
+  </thead>
+
+  {% for item in missions %}
+ <tr id='mission_{{item.id}}'>
+      <td data-label="Mission">{{item.id}}</td>
+      <td data-label="Etape">
+      {% if item.etape == 'encoure' %}
+        {{l.missioncolaborateur.20}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}
+      </td>
+      <td data-label="Collaborateur">{{item.colaborator.username}}</td>
+      <td data-label="Assure">{{item.sinistre.assure}}</td>
+      <td data-label="Assure">{{item.sinistre.vehicule}}</td>
+    <td data-label="Imma">{{item.sinistre.matricule}}</td>
+    <td data-label="Imma WW">{{item.sinistre.matricule_ww}}</td>
+    <td data-label="Tele"><a href="tel:{{item.sinistre.telephone}}">{{item.sinistre.telephone}}</a></td>
+    <td data-label="Action"><a class="btn btn-success envoyer-les-images" data-id="{{item.id}}"   href="javascript:;"  >
+    <i class="icon-upload4"></i> <span class="hidden-xs">{{l.missioncolaborateur.21}}</span></a></td>
+  </tr>
+  {% endfor %}
+ 
+   
+</table>
+
+
+
+
+
+
+  {% for item in missions %}
+<ul class="responsive_ul">
+  <li>{{l.missioncolaborateur.22}}</li>
+  <li>{{item.id}}</li>
+  <li> {{l.missioncolaborateur.12}} </li>
+  <li>{% if item.etape == 'encoure' %}
+      {{l.missioncolaborateur.23}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}</li>
+  <li>{{l.missioncolaborateur.12}}</li>
+  <li>
+    {% if item.etape == 'encoure' %}
+        {{l.missioncolaborateur.25}}
+      {%  else %}
+      {{item.etape}}
+      {%  endif %}
+  </li>
+  <li>{{l.missioncolaborateur.26}}</li>
+  <li>{{item.colaborator.username}}</li>
+  <li>{{l.missioncolaborateur.27}}</li>
+  <li><a href="tel:{{item.sinistre.telephone}}">{{item.sinistre.telephone}}</a></li>
+  <li>{{l.missioncolaborateur.28}}</li>
+  <li>{{item.sinistre.vehicule}}</li>
+  <li>{{l.missioncolaborateur.29}}</li>
+  <li>{{item.sinistre.assure}}</li>
+  <li>{{l.missioncolaborateur.30}}</li>
+  <li>{{item.sinistre.matricule}}</li>
+  <li> {{l.missioncolaborateur.31}}</li>
+  <li>{{item.sinistre.matricule_ww}}</li>
+ 
+  <li>{{l.missioncolaborateur.32}}</li>
+  <li> <a class="btn btn-success envoyer-les-images" data-id="{{item.id}}"   href="javascript:;"  data-toggle="modal" data-target="#myModal" >
+    <i class="icon-upload4"></i> <span class="hidden-xs">{{l.missioncolaborateur.33}}</span></a> </li>
+</ul>      
+      {% endfor %} 
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<center>{{pagination|raw}}</center>
+
+    </div>
+</div>
+   
+
+{% endblock %}  
+            

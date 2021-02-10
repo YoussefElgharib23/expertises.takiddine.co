@@ -1,0 +1,160 @@
+{% extends "admin/layout.twig" %}
+{% block title %} {{l.SettingsAccount.165}} {% endblock %}
+{% block content %}
+
+<!-- Main content -->
+<div class="content-wrapper">
+				
+
+				<!-- Page header -->
+				<div class="page-header page-header-transparent">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h1><span class="text-semibold">{{l.SettingsAccount.166}}</span></h1>
+							<p class="text-muted">{{l.SettingsAccount.167}}</p>
+						</div>
+
+						<div class="heading-elements">
+							
+						</div>
+					</div>
+				</div>
+				<!-- /page header -->
+<!-- Content area -->
+<div class="content">
+				{% include "admin/elements/flash.twig" %}
+
+
+ <div class="col-md-8">
+                <div class="panel panel-flat col-md-12">
+                    <div class="panel-heading no-padding-bottom">
+                        <h3 class="panel-title">{{l.SettingsAccount.168}}</h3>
+                        <p class="no-margin-bottom">{{l.SettingsAccount.169}}</p>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="post" id='AdminGeneralInfo' action="{{path_for('settings.account')}}">
+                            <fieldset class="content-group">
+                                <legend class="text-bold"></legend>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">{{l.SettingsAccount.170}}</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control frequired" value='{{user.username}}' name="username" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">{{l.SettingsAccount.171}}</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control frequired" value='{{user.email}}' name="email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="validate" value='validate_my_settings' />
+                                    <button type="submit" class="btn btn-primary btn-block active no-marin-bottom">{{l.SettingsAccount.172}}</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="result"></div>
+                    </div>
+                </div>
+                      
+
+                <div class="panel panel-flat col-md-12">
+                    <div class="panel-heading no-padding-bottom">
+                        <h3 class="panel-title">{{l.SettingsAccount.173}}</h3>
+                        <p class="no-margin-bottom">{{l.SettingsAccount.174}}</p>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="AdminPasswords" method="post" action="{{path_for('settings.account')}}">
+
+                            <fieldset class="content-group">
+                                <legend class="text-bold"></legend>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">{{l.SettingsAccount.175}}</label>
+                                    <div class="col-lg-9">
+                                        <input type="password" class="form-control frequired"  name="old_pass" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">{{l.SettingsAccount.176}}</label>
+                                    <div class="col-lg-9">
+                                        <input type="password" class="form-control frequired" id="new_pass"  name="new_pass" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">{{l.SettingsAccount.177}}</label>
+                                    <div class="col-lg-9"> 
+                                        <input type="password" class="form-control frequired" id='new_pass_re' name="new_pass_re" />
+                                    </div>
+                                </div>                                
+                                <div class="form-group">
+                                    <input type="hidden" name="validate" value='validate_my_pass' />
+                                    <button type="submit" class="btn btn-primary btn-block active">{{l.SettingsAccount.178}}</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="resultpassword"></div>
+                    </div>
+                </div>
+                
+                
+                </div>
+                
+<div class="col-md-4">
+						<div class="sidebar-default sidebar-separate">
+							<div class="sidebar-content">
+
+								<!-- User details -->
+								<div class="content-group">
+									<div class="panel-body bg-indigo-400 border-radius-top text-center" style="background-image: url(http://demo.interface.club/limitless/assets/images/bg.png); background-size: contain;">
+										
+
+										<a href="#" class="display-inline-block content-group-sm">
+											<img src="{{url.avatars}}{{user.avatar}}" class="img-circle img-responsive" alt="" style="width: 110px; height: 110px;">
+										</a>
+<div class="content-group-sm">
+											<h1 class="text-semibold no-margin-bottom" style="margin-top: -11px;">
+												{{user.full_name}}
+											</h1>
+											<h6>{{l.SettingsAccount.179}} </h6>
+
+										</div>
+										
+									</div>
+
+									<div class="panel no-border-top no-border-radius-top">
+									<table class="table">
+									    <tr>
+									        <td>{{l.SettingsAccount.180}}</td>
+									        <td>{{user.email}}</td>
+									    </tr>
+									    <tr>
+									        <td>{{l.SettingsAccount.181}}</td>
+									        <td>{{user.created_at.toDateTimeString()}}</td>
+									    </tr>	
+									    <tr>
+									        <td>{{l.SettingsAccount.182}}</td>
+									        <td>{{user.country}}</td>
+									    </tr>		
+									    <tr>
+									        <td colspan="2" class="text-center"><a href="{{path_for('logout')}}"><i class="icon-switch2"></i> {{l.SettingsAccount.183}}</a></td>
+									    </tr>									    							    								    
+									</table>
+									
+								
+									</div>
+								</div>
+								<!-- /user details -->
+
+
+				
+							</div>
+						</div>
+<!--					</div>-->
+</div>               
+                
+                
+                
+    </div>
+        </div>
+
+	{% endblock %}
